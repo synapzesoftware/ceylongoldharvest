@@ -113,7 +113,7 @@ const Footer = () => {
             {/* <h3 className="text-xl font-bold mb-4">ProposeMe</h3> */}
             <Link href="/" className="flex items-center mb-4">
               <Image 
-                src={logoImg} 
+                src={logoImg.src} 
                 alt="ProposedMe Logo" 
                 width={140} 
                 height={40} 

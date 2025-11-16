@@ -78,7 +78,7 @@ export default function Navbar() {
           >
             <Link href="/">
               <Image
-                src={logoImg}
+                src={logoImg.src}
                 alt="Logo"
                 width={140} // adjust width
                 height={40} // adjust height
