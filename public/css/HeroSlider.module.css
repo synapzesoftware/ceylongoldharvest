@@ -1,0 +1,520 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background overlay for readability */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.6) 40%);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  }
+}
+
+/* Slide background */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1s ease, transform 6s ease;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Text styling */
+.textBox {
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  transform: translateY(-50%);
+  max-width: 600px;
+  z-index: 3;
+  padding: 0 1rem;
+  width: 90%;
+}
+
+@media (max-width: 1024px) {
+  .textBox {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .textBox {
+    position: relative;
+    top: auto;
+    left: 0;
+    transform: none;
+    max-width: 100%;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+}
+
+.subTitle {
+  color: var(--text-secondary);
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 8px rgba(0,0,0,0.4);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.title {
+  font-size: 3.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0 1rem;
+  line-height: 1.1;
+  background: linear-gradient(30deg, var(--text-white), var(--white-color-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+  word-wrap: break-word;
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+    margin: 0.3rem 0 0.8rem;
+  }
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 1s;
+}
+
+@media (max-width: 768px) {
+  .description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+}
+
+.ctaButton {
+  background: var(--btn-color);
+  color: var(--btn-dark-text);
+  padding: 0.5rem 1.3rem;
+  border: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  cursor: pointer;
+  /* box-shadow: 0px 2px 8px var(--btn-color); */
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 1.4s;
+}
+
+.ctaButton:hover {
+  background: var(--btn-color-hover);
+  /* box-shadow: 0px 6px 20px rgba(255, 204, 0, 0.6); */
+  transform: translateY(-3px);
+  transform: scale(0.8);
+}
+
+.formBox {
+  position: absolute;
+  top: 50%;
+  right: 7%;
+  transform: translateY(-50%);
+  /* padding: 2rem; */
+  border-radius: 12px;
+  max-width: 450px;
+  width: 100%;
+  z-index: 10;
+  /* background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+}
+
+@media (max-width: 1024px) {
+  .formBox {
+    max-width: 350px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .formBox {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    max-width: 100%;
+    margin: 0 auto;
+    /* background: rgba(0, 0, 0, 0.5); */
+    border-radius: 0;
+    /* margin: 1rem 0rem; */
+    padding: 2rem 1rem;
+  }
+}
+
+.formBox h3 {
+  margin-bottom: 1rem;
+}
+
+.formBox input,
+.formBox textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.formBox button {
+  width: 100%;
+  background: #ffcc00;
+  color: black;
+  padding: 0.8rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.formBox button:hover {
+  background: #e6b800;
+  /* box-shadow: 0px 4px 12px rgba(255, 204, 0, 0.4); */
+}
+
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+/* Right Side Image */
+.rightImage {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Layout: left text, right image */
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.textBox {
+  flex: 0 0 60%;
+  min-width: 300px;
+}
+
+.formBox {
+  flex: 0 0 40%;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightImage {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile responsive */
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .textBox, .formBox {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+
+  .formBox {
+    margin-top: 1.5rem;
+  }
+}
+
+/* @media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column-reverse;
+  }
+  .textBox, .formBox {
+    width: 100%;
+    text-align: center;
+  }
+} */
+
+
+@media (max-width: 768px) {
+  .dots {
+    position: absolute;
+    gap: 8px;
+    padding: 6px 12px;
+    bottom: 2%;
+    left: 50%;
+  }
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.dot:hover {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.activeDot {
+  background: var(--btn-color);
+  width: 30px;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .activeDot {
+    width: 20px;
+  }
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .textBox {
+    max-width: 480px;
+  }
+  
+  .title {
+    font-size: 3.2rem;
+  }
+  
+  .formBox {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 992px) {
+  .textBox {
+    left: 5%;
+    max-width: 420px;
+  }
+  
+  .title {
+    font-size: 2.8rem;
+  }
+  
+  .subTitle {
+    font-size: 1.1rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .formBox {
+    right: 5%;
+    max-width: 320px;
+    padding: 1.5rem;
+  }
+  
+  .dots {
+    left: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .textBox {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    max-width: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 10vh;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+    margin: 1rem 0;
+  }
+  
+  .subTitle {
+    font-size: 1rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  
+  .ctaButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .formBox {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    max-width: 100%;
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+  
+  .dots {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .textBox {
+    padding: 1.5rem 1rem;
+    margin-top: 5vh;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  
+  .subTitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .ctaButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .formBox {
+    margin: 1rem 0rem 3rem 0rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  
+  .dots {
+    bottom: 2%;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .activeDot {
+    width: 24px;
+  }
+}

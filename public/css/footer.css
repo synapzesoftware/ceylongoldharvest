@@ -1,0 +1,137 @@
+footer {
+    background: var(--primary);
+}
+
+.subscribeBtn {
+    padding: 0.3rem 1.3rem;
+    border: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 0px 10px 10px 0px;
+    border: 1px solid var(--btn-border-white);
+    background-color: var(--btn-color);
+    color: var(--btn-dark-text);
+    /* border-left: 0; */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.subscribeBtn:hover{
+    background-color: var(--secondary);
+    color: var(--white-color);
+}
+
+/* Text inside button */
+.subscribeText {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Email icon starts off-screen left */
+.subscribeIcon {
+    position: absolute;
+    left: -30px; /* start off left */
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: var(--btn-dark-text);
+}
+
+/* Hover effect */
+.subscribeBtn:hover .subscribeText {
+    opacity: 0;
+    transform: translateX(50px); /* text moves right */
+}
+
+.subscribeBtn:hover .subscribeIcon {
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%); /* icon moves to center */
+}
+
+.subscribe-input {
+    border-radius: 10px 0 0 10px; /* rounded left corners */
+    border-right: 0;             /* remove right border */
+}
+
+/* Headings Hover */
+.footer-heading {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-heading::after {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--third-color);
+  transition: width 0.3s ease;
+}
+
+.footer-heading:hover {
+  color: var(--third-color);
+}
+
+.footer-heading:hover::after {
+  width: 100%;
+}
+
+.footer-about:hover{
+    color: var(--third-color);
+}
+
+/* Footer Links Hover */
+.footer-link {
+  position: relative;
+  display: inline-block;
+  color: var(--text-muted); /* gray-400 */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--third);
+  transition: width 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--third);
+  text-decoration: none;
+  transform: scale(0.9);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+.social-icon {
+  color: var(--text-muted);
+}
+.social-icon:hover {
+  color: var(--third-color);
+}
+
+.contact-icon {
+  color: var(--text-muted);
+}
+.contact-icon:hover {
+  color: var(--third-color);
+}
+.contact-details{
+    color: var(--text-muted);
+}

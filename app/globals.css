@@ -3,6 +3,42 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #003D3F;
+  --secondary: #6ba230;
+  --third:#FDCB2B;
+  --white-color: #ffffff;
+  --white-color-2: #F6F6F6;
+  --white-color-3: #c7c5c5;
+
+  /* Text Colors */
+  --text-primary: #EFFBDB;
+  --text-secondary: #bfbcbc;
+  --text-white: #ffffff;
+  --text-muted:  #9fa3b2;
+  --text-blaclk: #000000;
+  --text-dark: #111111;
+
+  /* Footer Specific */
+  --footer-bottom-bg: #012729; /* Dark footer bottom bar */
+  --footer-bg: #111111;        /* Footer main background */
+
+  /* Borders */
+  --border-color: #333333;
+
+  /* Buttons & Inputs */
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: #555555;
+
+  --btn-color: var(--secondary);
+  --btn-color-hover: var(--third);
+  --btn-text: var(--text-white);
+  --btn-border-white: var(--white-color);
+  --btn-dark-text: var(--text-blaclk);
+  --subscribe-btn-bg: var(--secondary);
+  --subscribe-btn-hover: var(--third);
+
+  /* Social Icons hover */
+  --social-hover: var(--third);
 }
 
 @theme inline {
@@ -20,7 +56,5 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

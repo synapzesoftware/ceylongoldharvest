@@ -1,0 +1,28 @@
+/* public/css/banner.css */
+.banner {
+  position: relative;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out both;
+}
+
+/* Optional background pattern */
+.bg-pattern {
+  background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+  background-size: 40px 40px;
+}
