@@ -2,6 +2,7 @@
 
 import React from "react";
 
+
 type BannerProps = {
   title?: string;
   subtitle?: string;
