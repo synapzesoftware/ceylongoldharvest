@@ -6,7 +6,7 @@ import Image from "next/image";
 import "../app/globals.css";
 import "../public/css/footer.css";
 import socialLinks from "../config/socialLinks";
-import logoImg from "../public/images/Logo/logo.png";
+import logoImg from "../public/images/logo/logo.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
