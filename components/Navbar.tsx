@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaPhoneAlt } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
-import logoImg from "../public/images/Logo/logo.png";
+import logoImg from "../public/images/logo/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState<boolean>(false);
