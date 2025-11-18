@@ -6,7 +6,7 @@ import Image from "next/image";
 import "../app/globals.css";
 import "../public/css/footer.css";
 import socialLinks from "../config/socialLinks";
-import logoImg from "../public/images/Logo/logo.png";
+import logoImg from "../public/images/logo/logo.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -161,7 +161,7 @@ const Footer = () => {
         <div className="flex items-center space-x-2 cursor-pointer transition-transform">
           <FaEnvelope className="contact-icon" />
           <span className="text-sm font-medium hover:scale-97 contact-details">
-            ceyloangoldharvest@gmail.com
+            ceylongoldharvest@gmail.com
           </span>
         </div>
 

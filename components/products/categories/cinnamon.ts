@@ -3,18 +3,18 @@ import { ProductType } from "../product-types";
 export const cinnamonProducts: ProductType[] = [
   {
     id: "c1",
-    name: "Premium Spice A1",
+    name: "Cinnaman Stick",
     description: "High-quality spice for daily cooking.",
     category: "Cinnamon",
-    frontImage: "/images/products/cinnamon/1.png",
-    backImage: "/images/products/cinnamon/2.png",
+    frontImage: "/images/products/cinnamon/cinnaman-stick-front.jpg",
+    backImage: "/images/products/cinnamon/cinnaman-stick-back.jpg",
   },
   {
     id: "c2",
-    name: "Premium Spice A2",
+    name: "Cinnaman Powder",
     description: "Fresh aroma and quality.",
     category: "Cinnamon",
-    frontImage: "/images/products/cinnamon/3.png",
-    backImage: "/images/products/cinnamon/4.png",
+    frontImage: "/images/products/cinnamon/cinnaman-powder-font.jpg",
+    backImage: "/images/products/cinnamon/cinnaman-powder-back.jpg",
   },
 ];

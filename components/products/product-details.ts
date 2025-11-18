@@ -1,11 +1,11 @@
 import { cinnamonProducts } from "./categories/cinnamon";
-import { BProducts } from "./categories/b";
-import { CProducts } from "./categories/c";
-import { DProducts } from "./categories/d";
+import { Spices } from "./categories/Spices";
+import { Herbal } from "./categories/Herbal";
+import { Tea } from "./categories/Tea";
 
 export const products = [
   ...cinnamonProducts,
-  ...BProducts,
-  ...CProducts,
-  ...DProducts,
+  ...Spices,
+  ...Herbal,
+  ...Tea,
 ];
