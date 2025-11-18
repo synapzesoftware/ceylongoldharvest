@@ -12,6 +12,7 @@ import img2 from "../../public/images/about/2.jpg";
 import img3 from "../../public/images/about/3.png";
 import img4 from "../../public/images/about/4.jpg";
 
+
 const AboutUs = () => {
 
   useEffect(() => {
